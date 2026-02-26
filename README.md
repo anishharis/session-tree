@@ -9,6 +9,14 @@ A [Claude Code skill](https://code.claude.com/docs/en/skills) that visualizes yo
 
 Claude Code stores conversations as JSONL files but provides no way to see how sessions relate to each other -- especially when you use `/fork` to branch conversations. This skill parses those files, detects fork relationships, and renders the result as a navigable tree.
 
+**Highly recommended:** Use `/rename` in your sessions to give them meaningful names. The tree displays custom names when set, and they're searchable with `claude --resume`. Without renaming, you'll see a wall of truncated first prompts that all look the same (especially forks).
+
+```
+/rename Auth refactor exploration
+/rename PRODUCTION-SCHEMA
+/rename Stripe integration attempt
+```
+
 ## Demo
 
 **ASCII output** (default):
@@ -55,14 +63,6 @@ git clone https://github.com/anishharis/session-tree ~/.claude/skills/session-tr
 ```
 
 That's it. The `/session-tree` slash command is now available in Claude Code.
-
-**Highly recommended:** Use `/rename` in your sessions to give them meaningful names. The tree displays custom names when set, and they're searchable with `claude --resume`. Without renaming, you'll see a wall of truncated first prompts that all look the same (especially forks).
-
-```
-/rename Auth refactor exploration
-/rename PRODUCTION-SCHEMA
-/rename Stripe integration attempt
-```
 
 ## Set up the `stree` alias (recommended)
 
