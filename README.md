@@ -9,31 +9,38 @@ Claude Code stores conversations as JSONL files but provides no way to see how s
 **ASCII output** (default):
 
 ```
-├── Feb 12 06:20 (1183 msgs) Update my resume
-│   ├── Feb 12 06:20 (202 msgs) Resume Fork 1
-│   └── Feb 12 06:20 (282 msgs) Resume Fork 2
-├── Feb 26 04:09 (80 msgs) GDrive folder research
-│   ├── Feb 26 09:09 (242 msgs) CONTEXT:2026-02-26
-│   ├── Feb 26 09:09 (229 msgs) GDrive Fork 2
-│   └── Feb 26 09:09 (225 msgs) GDrive Fork 1
-├── Feb 26 09:07 (3 msgs) in yazi how do i view dotfiles
-└── Feb 26 10:18 (250 msgs) saving the transcript of claude cli chat
-    └── Feb 26 10:18 (46 msgs) Transcript Fork
+├── Mar 01 09:15 (42 msgs) Set up Express API with auth middleware
+├── Mar 01 14:30 (18 msgs) Fix CORS issue on /api/users endpoint
+├── Mar 02 10:00 (156 msgs) Implement payment integration
+│   ├── Mar 02 11:45 (89 msgs) Payment integration - Stripe approach
+│   └── Mar 02 11:45 (73 msgs) Payment integration - PayPal approach
+├── Mar 03 08:20 (7 msgs) Add rate limiting to API
+├── Mar 04 16:00 (210 msgs) Refactor database schema
+│   ├── Mar 04 18:30 (95 msgs) Schema v2 - normalized tables
+│   ├── Mar 04 18:30 (64 msgs) Schema v2 - keep denormalized
+│   └── Mar 04 18:30 (112 msgs) PRODUCTION-SCHEMA
+├── Mar 05 09:00 (34 msgs) Write integration tests for checkout flow
+├── Mar 05 13:45 (12 msgs) Debug flaky CI pipeline
+└── Mar 06 10:30 (88 msgs) Deploy to staging
+
+Resume: claude --resume "<keyword>"
 ```
 
 **Interactive TUI** (`-i` flag):
 
 ```
  SESSION TREE  (↑↓ navigate | Enter resume | / search | q quit)
-▸ Feb 12 06:20 (1183) Update my resume
-    Feb 12 06:20 (202) Resume Fork 1
-    Feb 12 06:20 (282) Resume Fork 2
-▸ Feb 26 04:09 (80) GDrive folder research
-  > Feb 26 09:09 (242) CONTEXT:2026-02-26           <-- selected
-    Feb 26 09:09 (229) GDrive Fork 2
-    Feb 26 09:09 (225) GDrive Fork 1
+  ▸ Mar 02 10:00 (156) Implement payment integration
+      Mar 02 11:45 (89) Payment integration - Stripe approach
+      Mar 02 11:45 (73) Payment integration - PayPal approach
+    Mar 03 08:20 (7) Add rate limiting to API
+  ▸ Mar 04 16:00 (210) Refactor database schema
+      Mar 04 18:30 (95) Schema v2 - normalized tables
+      Mar 04 18:30 (64) Schema v2 - keep denormalized
+      Mar 04 18:30 (112) PRODUCTION-SCHEMA              ◀ selected
+    Mar 05 09:00 (34) Write integration tests for checkout flow
 
- 55a9dc1c-c6be-438d-a4ae-9b22e691defd
+ a3f8c21e-9b4d-4a17-b562-1e8f3d9c7a05
 ```
 
 ## Install
