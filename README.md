@@ -60,7 +60,7 @@ That's it. The `/session-tree` slash command is now available in Claude Code.
 ```
 /session-tree                    # full ASCII tree
 /session-tree interactive        # interactive TUI browser
-/session-tree resume             # subtree filtered to sessions matching "resume"
+/session-tree payment            # only show the subtree matching "payment"
 /session-tree --depth 0          # roots only, forks collapsed
 /session-tree excalidraw         # render to Excalidraw (needs MCP server)
 ```
@@ -80,7 +80,7 @@ python3 ~/.claude/skills/session-tree/scripts/build_tree.py \
 
 # Filter to a specific session subtree
 python3 ~/.claude/skills/session-tree/scripts/build_tree.py \
-  ~/.claude/projects/-Users-yourname-yourproject/ --filter "resume"
+  ~/.claude/projects/-Users-yourname-yourproject/ --filter "payment"
 
 # JSON output (for piping to other tools)
 python3 ~/.claude/skills/session-tree/scripts/build_tree.py \
