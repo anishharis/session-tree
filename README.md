@@ -25,13 +25,15 @@ Claude Code stores conversations as JSONL files but provides no way to see how s
 ├── Mar 01 09:15 (42 msgs) Set up Express API with auth middleware
 ├── Mar 01 14:30 (18 msgs) Fix CORS issue on /api/users endpoint
 ├── Mar 02 10:00 (156 msgs) Implement payment integration
-│   ├── Mar 02 11:45 (89 msgs) Payment integration - Stripe approach
-│   └── Mar 02 11:45 (73 msgs) Payment integration - PayPal approach
+│   └── Mar 02 11:45 (89 msgs) Stripe approach
+│       └── Mar 02 12:30 (134 msgs) Stripe with webhooks
+│           ├── Mar 02 14:00 (67 msgs) Webhooks v1
+│           └── Mar 02 14:00 (92 msgs) FINAL: Stripe webhooks v2
 ├── Mar 03 08:20 (7 msgs) Add rate limiting to API
 ├── Mar 04 16:00 (210 msgs) Refactor database schema
-│   ├── Mar 04 18:30 (95 msgs) Schema v2 - normalized tables
-│   ├── Mar 04 18:30 (64 msgs) Schema v2 - keep denormalized
-│   └── Mar 04 18:30 (112 msgs) PRODUCTION-SCHEMA
+│   └── Mar 04 18:30 (95 msgs) Schema v2 normalized
+│       ├── Mar 04 19:00 (64 msgs) Normalize + add indexes
+│       └── Mar 04 19:00 (112 msgs) PRODUCTION SCHEMA
 ├── Mar 05 09:00 (34 msgs) Write integration tests for checkout flow
 ├── Mar 05 13:45 (12 msgs) Debug flaky CI pipeline
 └── Mar 06 10:30 (88 msgs) Deploy to staging
@@ -43,12 +45,12 @@ Resume: claude --resume "<keyword>"   (don't forget the quotes!)
 
 ```
  SESSION TREE  (↑↓ navigate | ←→ collapse/expand | Enter resume | / search | q quit)
-  ▸ Mar 02 10:00 (156) Implement payment integration       ← collapsed (press → to expand)
+  ▸ Mar 02 10:00 (156) Implement payment integration       ← collapsed (→ to expand)
     Mar 03 08:20 (7) Add rate limiting to API
   ▾ Mar 04 16:00 (210) Refactor database schema            ← expanded
-      Mar 04 18:30 (95) Schema v2 - normalized tables
-      Mar 04 18:30 (64) Schema v2 - keep denormalized
-      Mar 04 18:30 (112) PRODUCTION-SCHEMA              ◀ selected
+    ▾ Mar 04 18:30 (95) Schema v2 normalized
+        Mar 04 19:00 (64) Normalize + add indexes
+        Mar 04 19:00 (112) PRODUCTION SCHEMA            ◀ selected
     Mar 05 09:00 (34) Write integration tests for checkout flow
 
  a3f8c21e-9b4d-4a17-b562-1e8f3d9c7a05
