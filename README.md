@@ -1,5 +1,10 @@
 # session-tree
 
+![GitHub stars](https://img.shields.io/github/stars/anishharis/session-tree?style=flat-square)
+![GitHub forks](https://img.shields.io/github/forks/anishharis/session-tree?style=flat-square)
+![GitHub last commit](https://img.shields.io/github/last-commit/anishharis/session-tree?style=flat-square)
+![GitHub repo size](https://img.shields.io/github/repo-size/anishharis/session-tree?style=flat-square)
+
 A [Claude Code skill](https://code.claude.com/docs/en/skills) that visualizes your conversation history as a tree, showing fork relationships between sessions.
 
 Claude Code stores conversations as JSONL files but provides no way to see how sessions relate to each other -- especially when you use `/fork` to branch conversations. This skill parses those files, detects fork relationships, and renders the result as a navigable tree.
