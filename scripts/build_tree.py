@@ -144,7 +144,7 @@ def build_tree_json(project_path=None):
     if not project_path:
         # Auto-detect from cwd
         cwd = os.getcwd()
-        encoded = cwd.replace("/", "-")
+        encoded = re.sub(r"[/.]", "-", cwd)
         project_path = os.path.expanduser(f"~/.claude/projects/{encoded}/")
 
     jsonl_files = glob.glob(os.path.join(project_path, "*.jsonl"))
