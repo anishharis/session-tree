@@ -34,12 +34,10 @@ Resume: claude --resume "<keyword>"   (don't forget the quotes!)
 **Interactive TUI** (`-i` flag):
 
 ```
- SESSION TREE  (↑↓ navigate | Enter resume | / search | q quit)
-  ▸ Mar 02 10:00 (156) Implement payment integration
-      Mar 02 11:45 (89) Payment integration - Stripe approach
-      Mar 02 11:45 (73) Payment integration - PayPal approach
+ SESSION TREE  (↑↓ navigate | ←→ collapse/expand | Enter resume | / search | q quit)
+  ▸ Mar 02 10:00 (156) Implement payment integration       ← collapsed (press → to expand)
     Mar 03 08:20 (7) Add rate limiting to API
-  ▸ Mar 04 16:00 (210) Refactor database schema
+  ▾ Mar 04 16:00 (210) Refactor database schema            ← expanded
       Mar 04 18:30 (95) Schema v2 - normalized tables
       Mar 04 18:30 (64) Schema v2 - keep denormalized
       Mar 04 18:30 (112) PRODUCTION-SCHEMA              ◀ selected
@@ -130,7 +128,9 @@ python3 ~/.claude/skills/session-tree/scripts/build_tree.py \
 |---|---|
 | `↑` / `k` | Move up |
 | `↓` / `j` | Move down |
-| `Enter` | Print resume command for selected session |
+| `←` / `h` | Collapse node (or jump to parent) |
+| `→` / `l` | Expand collapsed node |
+| `Enter` | Resume selected session |
 | `/` | Search/filter by session name |
 | `Esc` | Cancel search or quit |
 | `g` | Jump to top |
