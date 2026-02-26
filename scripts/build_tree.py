@@ -115,8 +115,14 @@ def detect_forks(sessions):
         root = group[0]
         roots.add(root["sessionId"])
 
-        for child in group[1:]:
-            edges.append((root["sessionId"], child["sessionId"]))
+        # Chain forks: sort remaining by message count (ascending) to detect
+        # fork-of-fork relationships. A fork with fewer messages was forked
+        # earlier in the conversation, so it's the parent of forks with more.
+        forks = sorted(group[1:], key=lambda x: x["messageCount"])
+        chain = [root]
+        for fork in forks:
+            edges.append((chain[-1]["sessionId"], fork["sessionId"]))
+            chain.append(fork)
 
     # Sessions with unique prompts are standalone roots
     for s in sessions:
