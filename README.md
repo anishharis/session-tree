@@ -53,6 +53,26 @@ git clone https://github.com/anishharis/session-tree ~/.claude/skills/session-tr
 
 That's it. The `/session-tree` slash command is now available in Claude Code.
 
+## Set up the `stree` alias (recommended)
+
+Add this to your `~/.zshrc` or `~/.bashrc`:
+
+```bash
+alias stree="python3 ~/.claude/skills/session-tree/scripts/build_tree.py"
+```
+
+The script auto-detects the Claude project path from your current working directory, so you don't need to pass any paths. Just `cd` into your project and run:
+
+```bash
+stree                       # ASCII tree
+stree -i                    # interactive TUI — navigate with arrow keys, Enter to resume
+stree --filter "auth"       # subtree matching "auth"
+stree --depth 0             # roots only, forks collapsed
+stree --json                # JSON output for piping to other tools
+```
+
+The interactive TUI (`stree -i`) is the best way to browse sessions. Press Enter on any session to immediately resume it with `claude --resume`.
+
 ## Usage
 
 ### As a Claude Code skill
@@ -67,38 +87,28 @@ That's it. The `/session-tree` slash command is now available in Claude Code.
 
 ### As a standalone CLI
 
-You can also run the scripts directly without Claude Code:
+You can also run the scripts directly without the alias:
 
 ```bash
-# ASCII tree for current project
-python3 ~/.claude/skills/session-tree/scripts/build_tree.py \
-  ~/.claude/projects/-Users-yourname-yourproject/
+# ASCII tree for current project (auto-detects path from cwd)
+python3 ~/.claude/skills/session-tree/scripts/build_tree.py
 
 # Interactive browser
-python3 ~/.claude/skills/session-tree/scripts/build_tree.py \
-  ~/.claude/projects/-Users-yourname-yourproject/ -i
+python3 ~/.claude/skills/session-tree/scripts/build_tree.py -i
 
 # Filter to a specific session subtree
-python3 ~/.claude/skills/session-tree/scripts/build_tree.py \
-  ~/.claude/projects/-Users-yourname-yourproject/ --filter "payment"
+python3 ~/.claude/skills/session-tree/scripts/build_tree.py --filter "payment"
 
 # JSON output (for piping to other tools)
-python3 ~/.claude/skills/session-tree/scripts/build_tree.py \
-  ~/.claude/projects/-Users-yourname-yourproject/ --json
+python3 ~/.claude/skills/session-tree/scripts/build_tree.py --json
 
 # Limit tree depth
+python3 ~/.claude/skills/session-tree/scripts/build_tree.py --depth 1
+
+# Explicit project path (if auto-detect doesn't work)
 python3 ~/.claude/skills/session-tree/scripts/build_tree.py \
-  ~/.claude/projects/-Users-yourname-yourproject/ --depth 1
+  ~/.claude/projects/-Users-yourname-yourproject/
 ```
-
-### Finding your project path
-
-Claude Code stores session data in `~/.claude/projects/` with directory names derived from your working directory by replacing `/` with `-`. For example:
-
-| Working directory | Session directory |
-|---|---|
-| `/Users/alice/myproject` | `~/.claude/projects/-Users-alice-myproject/` |
-| `/home/bob/code/api` | `~/.claude/projects/-home-bob-code-api/` |
 
 ## Interactive TUI keybindings
 
