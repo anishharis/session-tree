@@ -209,6 +209,10 @@ session-tree/
     interactive_tree.py          # Curses-based interactive TUI
 ```
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=anishharis/session-tree&type=Date)](https://star-history.com/#anishharis/session-tree&Date)
+
 ## License
 
 MIT
