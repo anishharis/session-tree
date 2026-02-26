@@ -85,6 +85,15 @@ The interactive TUI (`stree -i`) is the best way to browse sessions. Press Enter
 /session-tree excalidraw         # render to Excalidraw (needs MCP server)
 ```
 
+The ASCII tree shows session names you can copy-paste to resume:
+
+```bash
+claude --resume "Fix CORS issue"
+claude --resume "payment"
+```
+
+The quotes matter — they let `claude --resume` fuzzy-match the session by name instead of requiring a UUID.
+
 ### As a standalone CLI
 
 You can also run the scripts directly without the alias:
