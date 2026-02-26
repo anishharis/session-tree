@@ -75,7 +75,7 @@ The interactive TUI (`stree -i`) is the best way to browse sessions. Press Enter
 
 ## Usage
 
-### As a Claude Code skill
+### As a Claude Code skill (because I like making skills)
 
 ```
 /session-tree                    # full ASCII tree
