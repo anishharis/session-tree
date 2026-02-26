@@ -79,7 +79,7 @@ The interactive TUI (`stree -i`) is the best way to browse sessions. Press Enter
 
 ```
 /session-tree                    # full ASCII tree
-/session-tree interactive        # interactive TUI browser
+/session-tree interactive        # get the command to launch the TUI (can't run inside Claude Code)
 /session-tree payment            # only show the subtree matching "payment"
 /session-tree --depth 0          # roots only, forks collapsed
 /session-tree excalidraw         # render to Excalidraw (needs MCP server)
