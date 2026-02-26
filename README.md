@@ -23,7 +23,7 @@ Claude Code stores conversations as JSONL files but provides no way to see how s
 ├── Mar 05 13:45 (12 msgs) Debug flaky CI pipeline
 └── Mar 06 10:30 (88 msgs) Deploy to staging
 
-Resume: claude --resume "<keyword>"
+Resume: claude --resume "<keyword>"   (don't forget the quotes!)
 ```
 
 **Interactive TUI** (`-i` flag):
