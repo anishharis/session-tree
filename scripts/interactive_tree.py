@@ -192,8 +192,7 @@ def main(stdscr, project_path):
 def run(project_path=None):
     result = curses.wrapper(main, project_path)
     if result:
-        print(f"Resuming session: {result}")
-        print(f"Run: claude --resume {result}")
+        os.execvp("claude", ["claude", "--resume", result])
 
 
 if __name__ == "__main__":
