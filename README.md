@@ -138,7 +138,7 @@ python3 ~/.claude/skills/session-tree/scripts/build_tree.py \
 | `↓` / `j` | Move down |
 | `←` / `h` | Collapse node (or jump to parent) |
 | `→` / `l` | Expand collapsed node |
-| `Enter` | Resume selected session |
+| `Enter` | Immediately launch `claude --resume` for the selected session |
 | `/` | Search/filter by session name |
 | `Esc` | Cancel search or quit |
 | `g` | Jump to top |
@@ -146,7 +146,7 @@ python3 ~/.claude/skills/session-tree/scripts/build_tree.py \
 | `PgUp` / `PgDn` | Page up / down |
 | `q` | Quit |
 
-The footer bar always shows the full session UUID of the highlighted session. After pressing Enter, run the printed `claude --resume <id>` command to resume that session.
+The footer bar always shows the full session UUID of the highlighted session. Pressing Enter exits the TUI and automatically runs `claude --resume <session-id>`, dropping you straight into that session.
 
 ## How fork detection works
 
