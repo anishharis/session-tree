@@ -56,6 +56,14 @@ git clone https://github.com/anishharis/session-tree ~/.claude/skills/session-tr
 
 That's it. The `/session-tree` slash command is now available in Claude Code.
 
+**Highly recommended:** Use `/rename` in your sessions to give them meaningful names. The tree displays custom names when set, and they're searchable with `claude --resume`. Without renaming, you'll see a wall of truncated first prompts that all look the same (especially forks).
+
+```
+/rename Auth refactor exploration
+/rename PRODUCTION-SCHEMA
+/rename Stripe integration attempt
+```
+
 ## Set up the `stree` alias (recommended)
 
 Add this to your `~/.zshrc` or `~/.bashrc`:
